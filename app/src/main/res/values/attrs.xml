@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundProgressBar">
+        <attr name="backColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="progressWidth" format="dimension"/>
+        <attr name="progress" format="float"/>
+        <attr name="tagRadius" format="dimension"/>
+    </declare-styleable>
+
+    <!--下拉刷新进度条-->
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <!--开关按钮-->
+    <declare-styleable name="SwitchView">
+        <attr name="hasShadow" format="boolean"/>
+        <attr name="primaryColor" format="color"/>
+        <attr name="primaryColorDark" format="color"/>
+        <attr name="offColor" format="color"/>
+        <attr name="offColorDark" format="color"/>
+        <attr name="shadowColor" format="color"/>
+        <attr name="ratioAspect" format="float"/>
+        <attr name="isOpened" format="boolean"/>
+    </declare-styleable>
+
+    <!--可自动缩放的文字大小的TextView控件-->
+    <declare-styleable name="AutofitTextView">
+        <!-- Minimum size of the text. -->
+        <attr name="minTextSize" format="dimension" />
+        <!-- Amount of precision used to calculate the correct text size to fit within its
+        bounds. Lower precision is more precise and takes more time. -->
+        <attr name="precision" format="float" />
+        <!-- Defines whether to automatically resize text to fit to the view's bounds. -->
+        <attr name="sizeToFit" format="boolean" />
+    </declare-styleable>
+</resources>

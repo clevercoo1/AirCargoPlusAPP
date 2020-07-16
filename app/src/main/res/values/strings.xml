@@ -1,0 +1,247 @@
+<resources>
+    <!--listView刷新-->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新…</string>
+    <string name="not_updated_yet">暂未更新过</string>
+    <string name="updated_at">上次更新于%1$s前</string>
+    <string name="updated_just_now">刚刚更新</string>
+    <string name="time_error">时间有问题</string>
+
+    <!--刷新控件-->
+    <string name="pull_to_refresh_pull_label">刷新数据</string>
+    <string name="pull_to_refresh_release_label">松开刷新</string>
+    <string name="pull_to_refresh_refreshing_label">加载中\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开加载</string>
+    <string name="pull_to_refresh_footer_pull_label">加载数据</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+    <string name="pull_to_refresh_latest_time_label">最近更新</string>
+
+    <string name="app_name">货运助手</string>
+    <string name="company_name">南京禄口国际机场</string>
+    <string name="company_little_name">空港科技有限公司</string>
+    <string name="user_bumen">请输入部门名称</string>
+    <string name="user_name">请输入用户名</string>
+    <string name="user_pass">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="save_pass">记住密码</string>
+    <string name="autoLogin">自动登录</string>
+    <string name="user">用户账户:</string>
+    <string name="pass">用户密码:</string>
+    <string name="bumen">企业代码:</string>
+
+    <string name="title_name">这里是标题</string>
+    <string name="userhome_title">首页</string>
+    <string name="person">我的</string>
+
+    <string name="setting_pass">设置锁屏</string>
+    <string name="change_pass">修改密码</string>
+    <string name="reset_pass">重置密码锁</string>
+    <string name="version_update">检查版本</string>
+    <string name="exit_login">退出登录</string>
+
+    <string name="not_use">已经超过使用期</string>
+    <string name="not_data">没有数据信息</string>
+
+    <!--AWB界面 国内-->
+    <string name="awb_detail">订单详情</string>
+    <string name="awb_add">增加订单</string>
+    <string name="awb_load">正在加载数据</string>
+    <string name="awb_detail_Mawb">主运单号:</string>
+    <string name="awb_detail_pc">件数:</string>
+    <string name="awb_all_detail_pc">总件数:</string>
+    <string name="awb_detail_weight">重量:</string>
+    <string name="awb_detail_volume">体积:</string>
+    <string name="awb_detail_SpCode">特码:</string>
+    <string name="awb_detail_Goods">品名:</string>
+    <string name="awb_detail_businessType">业务类型:</string>
+    <string name="awb_detail_Package">包装类型:</string>
+    <string name="awb_detail_By">承运人:</string>
+    <string name="awb_detail_Dep">启运港:</string>
+    <string name="awb_detail_Dest1">航程1:</string>
+    <string name="awb_detail_Dest2">航程2:</string>
+    <string name="awb_detail_Remark">备注:</string>
+    <string name="awb_detail_FlightChecked">定舱确认:</string>
+    <string name="awb_detail_FDate">计划航班日期:</string>
+    <string name="awb_detail_Fno">计划航班号:</string>
+    <string name="awb_detail_Shipper">托运人:</string>
+    <string name="awb_detail_ShipperTEL">托运人电话:</string>
+    <string name="awb_detail_Consignee">收货人:</string>
+    <string name="awb_detail_CNEETEL">收货人电话:</string>
+    <string name="awb_detail_TransportNO">运输证:</string>
+    <string name="awb_detail_AllowTransNO">准运证:</string>
+    <string name="awb_detail_CIQNumber">商检号:</string>
+    <string name="awb_detail_update">更新订单</string>
+    <string name="awb_detail_sure">提交</string>
+
+    <string name="danhao">请输入单号</string>
+    <string name="jianshu">请输入数量</string>
+    <string name="zhongliang">请输入重量</string>
+    <string name="tiji">请输入体积</string>
+    <string name="pinming">请输入名称</string>
+    <string name="leixing">请选择类型</string>
+    <string name="mingzi">请输入名字</string>
+    <string name="qiyungang">请输入启运港</string>
+    <string name="hangcheng">请输入航程</string>
+    <string name="hangbanhao">请输入航班号</string>
+    <string name="tuoyunren">请输入托运人名称</string>
+    <string name="shouhuoren">请输入收货人名称</string>
+    <string name="yunshuzheng">请输入运输证</string>
+    <string name="zhunyunzheng">请输入准运证</string>
+    <string name="shangjianhao">请出入商检号</string>
+    <string name="beizhu">请输入备注信息</string>
+    <string name="riqi">请选择日期</string>
+
+    <string name="fendanhao">请输入单号</string>
+    <string name="fendanjianshu">请输入件数</string>
+    <string name="fendanzhongliang">请输入重量</string>
+    <string name="fendantiji">请输入体积</string>
+    <string name="fendanpinming">请输入品名</string>
+
+    <!--house界面 国内-->
+    <string name="house_sure">提交</string>
+    <string name="house_begin_time">开始时间:</string>
+    <string name="house_end_time">结束时间:</string>
+    <string name="house_yundanhao">运单号:</string>
+    <string name="house_rukushijian">入库日期:</string>
+    <string name="house_guonei_ruku">国内出港入库查询</string>
+    <string name="house_guonei_ruku_detail">国内出港入库列表</string>
+    <string name="house_shuruyundanhao">请输入运单号</string>
+    <string name="house_shurumudigang">请输入目的港</string>
+    <string name="house_mudigang">目的港:</string>
+
+    <!--int界面 国际出港预录入-->
+    <string name="int_prepare_title">国际出港预录入</string>
+    <string name="int_prepare_child_title">分页列表详情</string>
+    <string name="int_prepare_group_title">主单列表详情</string>
+    <string name="int_child_hno">分运单号:</string>
+    <string name="int_child_pc">分单件数:</string>
+    <string name="int_child_weight">分单重量:</string>
+    <string name="int_child_volume">分单体积:</string>
+    <string name="int_child_goods_en">品名（英文):</string>
+    <string name="int_child_goods_cn">品名（中文):</string>
+    <string name="int_child_mftstatus">预配状态:</string>
+    <string name="int_child_updata">修改分单</string>
+    <string name="int_group_pc">主单件数:</string>
+    <string name="int_group_weight">主单重量:</string>
+    <string name="int_group_volume">主单体积:</string>
+    <string name="int_group_origin">货源地:</string>
+    <string name="int_group_by">承运人:</string>
+    <string name="int_group_tranFlag">报关类型:</string>
+    <string name="int_group_customsCode">支线离境关区:</string>
+    <string name="int_group_transPortMode">离境方式:</string>
+    <string name="int_group_freightPayment">支付方式:</string>
+    <string name="int_group_cNEECity">收货城市:</string>
+    <string name="int_group_cNEECountry">收货国家:</string>
+    <string name="int_group_mftStatus">预配状态:</string>
+    <string name="int_group_gprice">货值:</string>
+    <string name="int_group_cIQStatus">商检状态:</string>
+    <string name="int_group_cIQNumber">商检号:</string>
+    <string name="int_group_update">更新主单</string>
+    <string name="int_group_delete">删除主单</string>
+    <string name="int_child_add">增加分单</string>
+    <string name="int_declare_mawb">预配申报</string>
+    <string name="int_child_delete">删除分单</string>
+    <string name="int_awb_house_title">国际出港入库查询</string>
+    <string name="int_awb_house_item_title">国际出港入库信息</string>
+    <string name="int_awb_house_search">查询</string>
+    <string name="int_declare_title">预配/运抵申报查询</string>
+
+    <!--国际新增主单提示-->
+    <string name="jihuahangbanhao">请输入计划航班号</string>
+    <string name="baozhuangleixing">请输入包装类型</string>
+    <string name="huoyuandi">请输入货源地</string>
+    <string name="chengyunren">请输入承运人</string>
+    <string name="jihuariqi">请选择计划航班日期</string>
+    <string name="zhifufangshi">请输入支付方式</string>
+    <string name="shouhuoguojia">请输入收货国家</string>
+    <string name="shouhuochengshi">请输入收货城市</string>
+    <string name="huozhi">请输入货值</string>
+
+    <!--运抵与申报界面-->
+    <string name="declare_rearchid">运抵编号:</string>
+    <string name="declare_new_rearchid">新运抵编号</string>
+    <string name="declare_cmdstatus">海关指令:</string>
+    <string name="declare_dest1">卸货港:</string>
+    <string name="declare_CustomsCode">离境关区:</string>
+    <string name="declare_Transportmode">离境方式:</string>
+    <string name="declare_MftStatus">预配状态:</string>
+    <string name="declare_MftMSGID">预配编号:</string>
+    <string name="declare_ArrivalStatus">运抵状态:</string>
+    <string name="declare_ArrMSGID">运抵编号:</string>
+    <string name="declare_Response">海关回执</string>
+    <string name="declare_pc">件数:</string>
+    <string name="declare_shenbao">一键申报</string>
+    <string name="declare_resert">重置申报</string>
+    <string name="declare_splite">支线拆分</string>
+    <string name="declare_hebing">支线合并</string>
+    <string name="declare_zhiling">指令</string>
+    <string name="splite_sure">确定</string>
+    <string name="splite_update">修改</string>
+
+    <!--联检申报-->
+    <string name="declareshanjianhao">商检号:</string>
+    <string name="shanjianzhiling">商检指令:</string>
+    <string name="haiguanzhiling">海关指令:</string>
+    <string name="yuliu">预配状态:</string>
+    <string name="yundi">运抵状态:</string>
+    <string name="zhuanghuo">装载状态:</string>
+    <string name="lihuo">理货状态:</string>
+    <string name="declare_huozhi">货值:</string>
+
+    <!--到达物信息-->
+    <string name="cangdanzhuangtai">舱单状态</string>
+    <string name="lihuozhuangtai">理货状态</string>
+    <string name="zhixianshenbao">分单申报</string>
+
+    <string name="imphangbanri">航班日期:</string>
+    <string name="imphangbanhao">航班号:</string>
+    <string name="impzhudanhao">主单号:</string>
+    <string name="impfendanhao">分单号:</string>
+    <string name="impzongjianshu">总件数:</string>
+    <string name="implihuojianshu">理货件数:</string>
+    <string name="impqiyungang">启运港:</string>
+    <string name="impshifagang">始发港:</string>
+    <string name="impmudigang">目的港:</string>
+    <string name="impyunshuleixing">运输类型:</string>
+    <string name="impdianziyundan">电子运单:</string>
+    <string name="impcangdanzhuangtai">舱单状态:</string>
+    <string name="impcangdanhuizhi">舱单回执:</string>
+    <string name="implihuozhuangtai">理货状态:</string>
+    <string name="implihuohuizhi">理货回执:</string>
+
+    <string name="xiugaifendan">修改分单</string>
+    <string name="shanchufendan">删除分单</string>
+
+    <!--航班动态-->
+    <string name="impjingtinggang">经停港:</string>
+    <string name="impleixing">类型:</string>
+    <string name="impdiqu">地区:</string>
+    <string name="impyujiqifei">预计起飞:</string>
+    <string name="impshijiqifei">实际起飞:</string>
+    <string name="impyujidaoda">预计到达:</string>
+    <string name="impshijidaoda">实际到达:</string>
+    <string name="impjixing">机型:</string>
+    <string name="impjihao">机号:</string>
+    <string name="impjiwei">机位:</string>
+    <string name="impzhuangtai">状态:</string>
+    <string name="imphangzhanlou">航站楼:</string>
+    <string name="impyanwuyuanyi">延误原因:</string>
+
+    <!--航班动态-->
+    <string name="flight_date">航班日期:</string>
+    <string name="flight_hangbanhao">航班号:</string>
+    <string name="flight_tishihangbanhao">请输入航班号</string>
+    <string name="flight_qiyungang">启运港:</string>
+    <string name="flight_tishiqiyungang">请输入启运港</string>
+    <string name="flight_jinchugangleixing">进出港类型:</string>
+    <string name="flight_tishijinchugangleixing">请选择类型</string>
+
+    <string name="login_only_can_input">0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</string>
+
+    <string name="dialog_title">拖拽排序</string>
+    <string name="dialog_division">点击添加到导航条</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

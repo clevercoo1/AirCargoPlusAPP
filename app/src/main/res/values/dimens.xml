@@ -1,0 +1,28 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="company_size">30sp</dimen>
+    <dimen name="small_size">25sp</dimen>
+    <dimen name="small_text_size">20sp</dimen>
+    <dimen name="title_size">24sp</dimen>
+
+    <dimen name="awb_size">18sp</dimen>
+
+    <dimen name="awb_detail_size">15sp</dimen>
+
+    <dimen name="house_small_size">12sp</dimen>
+
+    <dimen name="house_size">18sp</dimen>
+
+    <!--单子字体详情公共颜色-->
+    <dimen name="declare_size">15sp</dimen>
+
+    <dimen name="login_size">17sp</dimen>
+
+    <dimen name="height_40dp">40dp</dimen>
+    <dimen name="size_20sp">20sp</dimen>
+    <dimen name="height_30dp">30dp</dimen>
+
+
+</resources>
