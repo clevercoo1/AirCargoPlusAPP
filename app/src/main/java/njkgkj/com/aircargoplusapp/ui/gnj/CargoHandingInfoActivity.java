@@ -419,7 +419,6 @@ public class CargoHandingInfoActivity extends Activity {
         txt_pinming.setText(cargoHandingApp.getGoods());
         txt_zongjianshu.setText(cargoHandingApp.getAwbPC().toString());
         txt_Prefix.setText(cargoHandingApp.getPrefix());
-
         EdTxt_shidaojianshu.setText(cargoHandingApp.getPc().toString());
         EdTxt_shidaozhongliang.setText(cargoHandingApp.getWeight().toString());
         EdTxt_shidaozhongtiji.setText(cargoHandingApp.getVolume().toString());
