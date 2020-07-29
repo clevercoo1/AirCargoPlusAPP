@@ -1,6 +1,7 @@
 package njkgkj.com.aircargoplusapp.ui.gnj;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,9 +9,11 @@ import android.icu.text.DecimalFormat;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,6 +26,11 @@ import android.widget.Toast;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +54,7 @@ public class CargoHandingInfoActivity extends Activity {
     private Context mContext;
     private Activity mAct;
     private NavBar navBar;
+    private List<View> views;
     boolean bool;
     BigDecimal WeightDefualt;
     BigDecimal VolumeDefault;
@@ -122,7 +131,7 @@ public class CargoHandingInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cargo_handing_info);
         mContext = CargoHandingInfoActivity.this;
-        mAct = (Activity) mContext;
+        mAct = PublicFun.getActivityByContext(mContext);
         ButterKnife.bind(this);
         initView();
     }
@@ -146,6 +155,13 @@ public class CargoHandingInfoActivity extends Activity {
         TxtViewSetEmpty();
         setListener();
         TextSetVaule();
+
+        views = new ArrayList<View>();
+        views.add(EdTxt_beizhu);
+        views.add( EdTxt_shidaojianshu);
+        views.add(EdTxt_shidaozhongliang);
+        views.add(EdTxt_shidaozhongtiji);
+        views.add(EdTxt_cangkuhuowei);
     }
     //endregion
 
@@ -242,6 +258,7 @@ public class CargoHandingInfoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 CloseWri();
+                PublicFun.KeyBoardHide(mContext,views);
             }
         });
         //endregion
@@ -385,11 +402,12 @@ public class CargoHandingInfoActivity extends Activity {
                 new HttpRoot.CallBack() {
                     @Override
                     public void onSucess(Object result) {
+                        Ldialog.dismiss();
                         ResData resData = (ResData) result;
                         bool = Boolean.parseBoolean(resData.getData().toString());
 
                         handler.sendEmptyMessage(AviationCommons.GNJ_CargoHandingInfoActivity);
-                        Ldialog.dismiss();
+
                     }
 
                     @Override

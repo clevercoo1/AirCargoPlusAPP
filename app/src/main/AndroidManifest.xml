@@ -39,13 +39,13 @@
             android:name=".ui.gnj.CargoHandingActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden" />
         <activity
             android:name=".ui.base.CaptureActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden" />
         <activity
             android:name=".ui.gnj.CargoHandingInfoActivity"
             android:launchMode="singleTask"

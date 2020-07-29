@@ -2,6 +2,7 @@ package njkgkj.com.aircargoplusapp.Utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -22,6 +23,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -101,13 +103,12 @@ public class PublicFun {
     }
     //endregion
 
-    //region 隐藏软键盘
-    public static void KeyBoardHide(Activity act, Context context) {
-        InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        if(imm.isActive() && act.getCurrentFocus()!=null){
-            if (act.getCurrentFocus().getWindowToken()!=null) {
-                imm.hideSoftInputFromWindow(act.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-            }
+    //region 隐藏软键盘,其中viewList 中需要放的是当前界面所有触发软键盘弹出的控件.
+    public static void KeyBoardHide(Context context,List<View> viewList) {
+        if (viewList == null) return;
+        InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        for (View v : viewList) {
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
     //endregion
@@ -283,6 +284,18 @@ public class PublicFun {
             return Base64.decode(code,Base64.DEFAULT);
         }
         else return null;
+    }
+    //endregion
+
+    //region 获取activity
+    public static Activity getActivityByContext(Context context){
+        while(context instanceof ContextWrapper){
+            if(context instanceof Activity){
+                return (Activity) context;
+            }
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        return null;
     }
     //endregion
 

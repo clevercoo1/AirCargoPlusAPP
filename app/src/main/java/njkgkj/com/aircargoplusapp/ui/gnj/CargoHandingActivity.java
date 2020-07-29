@@ -59,6 +59,7 @@ public class CargoHandingActivity extends Activity {
     private Context mContext;
     private Activity mAct;
     private NavBar navBar;
+    private List<View> views;
     private final String TAG = "CargoHandingLog";
     private List<CargoHandingApp> cargoHandingApps;
     //endregion
@@ -108,9 +109,8 @@ public class CargoHandingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cargo_handing);
         mContext = CargoHandingActivity.this;
-        mAct = (Activity) mContext;
+        mAct = PublicFun.getActivityByContext(mContext);
         ButterKnife.bind(this);
-
         initView();
 //        setContentView(root);
     }
@@ -126,6 +126,9 @@ public class CargoHandingActivity extends Activity {
 
         TxtViewSetEmpty();
         setListener();
+
+        views = new ArrayList<View>();
+        views.add(EdTxt_YunDanHao);
     }
     //endregion
 
@@ -156,8 +159,9 @@ public class CargoHandingActivity extends Activity {
 
                     if (!TextUtils.isEmpty(re)) {
                         Btn_QinKong.performClick();
-                        PublicFun.KeyBoardHide(mAct, mContext);
+                        PublicFun.KeyBoardHide(mAct, views);
                         EdTxt_YunDanHao.setText(re);
+                        EdTxt_YunDanHao.setSelection(re.length());
                         Btn_ChaXun.performClick();
                     }
                 }
@@ -179,7 +183,7 @@ public class CargoHandingActivity extends Activity {
                             public void run() {
                                 tipDialog.dismiss();
                             }
-                        }, 1000);
+                        }, 1500);
                     }
                 }
 
@@ -286,7 +290,7 @@ public class CargoHandingActivity extends Activity {
 
 
                 } else {
-                    ToastUtils.showToast(mContext, "数据为空", Toast.LENGTH_SHORT);
+                    ToastUtils.showToast(mContext, "数据不存在或已发放！", Toast.LENGTH_SHORT);
                 }
             }
             return false;
@@ -300,11 +304,12 @@ public class CargoHandingActivity extends Activity {
                 new HttpRoot.CallBack() {
                     @Override
                     public void onSucess(Object result) {
+                        Ldialog.dismiss();
                         ResData resData = (ResData) result;
                         String json = resData.getData().toString();
                         cargoHandingApps = FastjsonUtils.fromJsonList(json, CargoHandingApp.class);
                         handler.sendEmptyMessage(GNJ_CargoHandingActivity);
-                        Ldialog.dismiss();
+
                     }
 
                     @Override
