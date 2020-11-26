@@ -8,12 +8,14 @@ import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatImageView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -84,8 +86,8 @@ public class CargoHandingActivity extends Activity {
     Button Btn_ChaXun;
     @BindView(R.id.CargoHanding_Btn_QinKong)
     Button Btn_QinKong;
-    @BindView(R.id.CargoHanding_Btn_SaoMiao)
-    Button Btn_SaoMiao;
+    @BindView(R.id.CargoHanding_Img_SaoMaYunDan)
+    AppCompatImageView Img_SaoMaYunDan;
     //endregion
 
     //region EditText控件
@@ -181,9 +183,10 @@ public class CargoHandingActivity extends Activity {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
+                                Btn_QinKong.performClick();
                                 tipDialog.dismiss();
                             }
-                        }, 1500);
+                        }, 1000);
                     }
                 }
 
@@ -205,9 +208,9 @@ public class CargoHandingActivity extends Activity {
                 if (!TextUtils.isEmpty(YunDanHao)) {
                     cargoHandingApp.setNo(YunDanHao);
                     UploadData mData = UploadDataUtils.getUploadData(cargoHandingApp, AviationCommons.gnj_CargoHandingActivity_model, HttpCommons.gnj_CargoHandingActivity_load);
-                    Ldialog.show();
 
                     if (!TextUtils.isEmpty(mData.getMethod())) {
+                        Ldialog.show();
                         GetInfo(mData);
                     } else {
                         ToastUtils.showToast(mContext, "数据转换错误！", Toast.LENGTH_SHORT);
@@ -227,7 +230,7 @@ public class CargoHandingActivity extends Activity {
             }
         });
 
-        Btn_SaoMiao.setOnClickListener(new View.OnClickListener() {
+        Img_SaoMaYunDan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 useCamera();

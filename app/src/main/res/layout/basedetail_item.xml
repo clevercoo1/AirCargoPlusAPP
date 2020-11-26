@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/BaseDetail_in_layout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="40dp"
+        android:background="#fff">
+
+        <njkgkj.com.aircargoplusapp.view.AutofitTextView
+            android:id="@+id/BaseDetail_inTxt_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="记录编号:"
+            android:textColor="#000"
+            android:textSize="@dimen/house_small_size"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            app:sizeToFit="true"/>
+
+        <njkgkj.com.aircargoplusapp.view.AutofitTextView
+            android:id="@+id/BaseDetail_inTxt_value"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.75"
+            android:text="CA1234/20-11-12"
+            android:textColor="#000"
+            android:textSize="@dimen/house_small_size"
+            android:gravity="left|center"
+            android:paddingLeft="4dp"
+            android:paddingRight="6dp"
+            android:maxLines="2"
+            app:sizeToFit="true"
+            android:textIsSelectable="false"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -40,11 +40,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="可输入后4位模糊查询"
-                android:layout_weight="0.85"
+                android:layout_weight="0.75"
                 android:inputType="numberDecimal"
                 android:imeOptions="actionDone"
                 android:maxLength="20"
                 android:paddingLeft="5dp"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/CargoHanding_Img_SaoMaYunDan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/saoma_one" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,23 +82,10 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_selector"
-                android:text="清空"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/CargoHanding_Btn_SaoMiao"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_selector"
-                android:text="扫描"
+                android:text="清空"
                 android:textColor="#ffffff"
                 android:textSize="18sp" />
         </LinearLayout>

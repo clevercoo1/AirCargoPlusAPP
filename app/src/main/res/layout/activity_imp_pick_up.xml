@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ImpPickUp_main">
+
+    <include layout="@layout/navbar"
+        android:id="@+id/ImpPickUpBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff">
+
+            <njkgkj.com.aircargoplusapp.view.AutofitTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginLeft="12dp"
+                android:layout_gravity="center"
+                android:text="运单号:"
+                android:textColor="#666666"
+                android:textSize="@dimen/house_size"
+                android:maxLines="1"
+                app:sizeToFit="true"/>
+
+            <EditText
+                android:id="@+id/ImpPickUp_EdTxt_YunDanHao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="输入或扫描运单号"
+                android:layout_weight="0.6"
+                android:inputType="numberDecimal"
+                android:imeOptions="actionDone"
+                android:maxLength="20"
+                android:paddingLeft="5dp"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ImpPickUp_Img_SaoMaYunDan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:srcCompat="@drawable/saoma_one" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff">
+
+            <njkgkj.com.aircargoplusapp.view.AutofitTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginLeft="12dp"
+                android:layout_gravity="center"
+                android:text="身份证:"
+                android:textColor="#666666"
+                android:textSize="@dimen/house_size"
+                android:maxLines="1"
+                app:sizeToFit="true"/>
+
+
+            <EditText
+                android:id="@+id/ImpPickUp_EdTxt_ShenFenZheng"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入身份证号"
+                android:layout_weight="0.7"
+                android:inputType="number"
+                android:digits="0123456789xyzXYZ"
+                android:imeOptions="actionDone"
+                android:maxLength="20"
+                android:paddingLeft="5dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff">
+            <Button
+                android:id="@+id/ImpPickUp_Btn_ChaXun"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:text="查询"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/ImpPickUp_Btn_QinKong"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:text="清空"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/ImpPickUp_Btn_TiQu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:text="提取"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- 此部分是标题部分 -->
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F2F2F2"
+            android:orientation="horizontal">
+
+            <!-- 左侧标题的父容器 -->
+            <TextView
+                android:id="@+id/ImpPickUp_tv_table_title_left"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:text="总标题"/>
+
+            <!-- 右侧标题的父容器可实现水平滚动 -->
+            <njkgkj.com.aircargoplusapp.tools.freegridview.SyncHorizontalScrollView
+                android:id="@+id/ImpPickUp_title_horsv"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:descendantFocusability="blocksDescendants"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/ImpPickUp_right_title_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </njkgkj.com.aircargoplusapp.tools.freegridview.SyncHorizontalScrollView>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 此部分是内容部分 用ScrollView实现上下滚动效果 -->
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/ImpPickUp_pulltorefreshview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ScrollView
+                    android:id="@+id/ImpPickUp_pull_refresh_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- 左侧内容的父容器 -->
+                        <njkgkj.com.aircargoplusapp.tools.freegridview.MyListView
+                            android:id="@+id/ImpPickUp_left_container_listview"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="0.4"
+                            android:scrollbars="none">
+                        </njkgkj.com.aircargoplusapp.tools.freegridview.MyListView>
+
+                        <!-- 右侧内容的父容器 实现水平滚动 -->
+                        <njkgkj.com.aircargoplusapp.tools.freegridview.SyncHorizontalScrollView
+                            android:id="@+id/ImpPickUp_content_horsv"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:fillViewport="true"
+                            android:scrollbars="none">
+                            <njkgkj.com.aircargoplusapp.tools.freegridview.MyListView
+                                android:id="@+id/ImpPickUp_right_container_listview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"
+                                android:scrollbars="none">
+                            </njkgkj.com.aircargoplusapp.tools.freegridview.MyListView>
+                        </njkgkj.com.aircargoplusapp.tools.freegridview.SyncHorizontalScrollView>
+                    </LinearLayout>
+                </ScrollView>
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>

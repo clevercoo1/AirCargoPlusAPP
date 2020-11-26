@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
+
+import njkgkj.com.aircargoplusapp.model.gnjm.ImpPickUpAppModel;
 import njkgkj.com.aircargoplusapp.tools.camera.CameraManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,11 +31,9 @@ import njkgkj.com.aircargoplusapp.tools.qr.BeepManager;
 import njkgkj.com.aircargoplusapp.tools.qr.CaptureActivityHandler;
 import njkgkj.com.aircargoplusapp.tools.qr.DecodeThread;
 import njkgkj.com.aircargoplusapp.tools.qr.InactivityTimer;
+import njkgkj.com.aircargoplusapp.ui.gjj.GjjMoveActivity;
 import njkgkj.com.aircargoplusapp.ui.gnj.CargoHandingActivity;
-
-import static njkgkj.com.aircargoplusapp.Utils.AviationCommons.CargoHandingActivity_CAMERA_REQUEST;
-import static njkgkj.com.aircargoplusapp.Utils.AviationCommons.CargoHandingActivity_CAMERA_RESULT;
-
+import njkgkj.com.aircargoplusapp.ui.gnj.ImpPickUpActivity;
 
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback {
     //region 自定义变量
@@ -118,9 +118,21 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         int num = 0;
 
         Integer req = (Integer) getIntent().getSerializableExtra("id");
-        if (req == CargoHandingActivity_CAMERA_REQUEST) {
-            intent.setClass(CaptureActivity.this, CargoHandingActivity.class);
-            num = CargoHandingActivity_CAMERA_RESULT;
+        switch(req){
+            case AviationCommons.CargoHandingActivity_CAMERA_REQUEST:
+                intent.setClass(CaptureActivity.this, CargoHandingActivity.class);
+                num = AviationCommons.CargoHandingActivity_CAMERA_RESULT;
+                break;
+            case AviationCommons.ImpPickUp_CAMERA_REQUEST:
+                intent.setClass(CaptureActivity.this, ImpPickUpActivity.class);
+                num = AviationCommons.ImpPickUp_CAMERA_RESULT;
+                break;
+            case AviationCommons.GjjMoveActivity_CAMERA_REQUEST:
+                intent.setClass(CaptureActivity.this, GjjMoveActivity.class);
+                num = AviationCommons.GjjMoveActivity_CAMERA_RESULT;
+                break;
+            default:
+                break;
         }
 
         intent.putExtras(bundle);

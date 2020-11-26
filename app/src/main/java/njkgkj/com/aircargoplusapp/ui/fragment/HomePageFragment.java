@@ -17,12 +17,10 @@ import njkgkj.com.aircargoplusapp.Utils.AviationCommons;
 import njkgkj.com.aircargoplusapp.Utils.PreferenceUtils;
 import njkgkj.com.aircargoplusapp.model.adapter.HomePageAdapter;
 import njkgkj.com.aircargoplusapp.model.home.HomeMessage;
-import njkgkj.com.aircargoplusapp.model.home.PrefereceHomeMessage;
-import njkgkj.com.aircargoplusapp.Utils.DateUtils;
-import njkgkj.com.aircargoplusapp.Utils.AviationCommons;
-import njkgkj.com.aircargoplusapp.Utils.PreferenceUtils;
 import njkgkj.com.aircargoplusapp.ui.base.NavBar;
+import njkgkj.com.aircargoplusapp.ui.gjj.GjjMoveActivity;
 import njkgkj.com.aircargoplusapp.ui.gnj.CargoHandingActivity;
+import njkgkj.com.aircargoplusapp.ui.gnj.ImpPickUpActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -77,9 +75,17 @@ public class HomePageFragment extends Fragment{
 //        list = PrefereceHomeMessage.pullXml(xml,getActivity());
         HomeMessage ho = new HomeMessage();
         ho.setName(AviationCommons.APP_GNJ_CargoHanding);
-        ho.setNameCN("出港理货");
+        ho.setNameCN("进港理货");
+        HomeMessage ho1 = new HomeMessage();
+        ho1.setName(AviationCommons.APP_GNJ_ImpPickUp);
+        ho1.setNameCN("进港提取");
+        HomeMessage ho2 = new HomeMessage();
+        ho2.setName(AviationCommons.APP_GJJ_Move);
+        ho2.setNameCN("国际进港理货");
         List<HomeMessage> holist = new ArrayList<>();
         holist.add(ho);
+        holist.add(ho1);
+        holist.add(ho2);
         list = holist;
 
         // 判断是否设置过锁屏密码
@@ -94,9 +100,13 @@ public class HomePageFragment extends Fragment{
             @Override
             public void bindView(ViewHolder holder, HomeMessage obj) {
                 if (obj.getName().equals(AviationCommons.APP_GNJ_CargoHanding)) {
-                    holder.setImageResource(R.id.image_iv,  R.drawable.gnj_cargohanding);
+                    holder.setImageResource(R.id.image_iv,R.drawable.gndemo);
+                } else if (obj.getName().equals(AviationCommons.APP_GNJ_ImpPickUp)) {
+                    holder.setImageResource(R.id.image_iv,R.drawable.gndemo);
+                } else if (obj.getName().equals(AviationCommons.APP_GJJ_Move)) {
+                    holder.setImageResource(R.id.image_iv,R.drawable.gjdenmo);
                 } else {
-                    holder.setImageResource(R.id.image_iv,  R.drawable.domawb);
+                    holder.setImageResource(R.id.image_iv,R.drawable.domawb);
                 };
 
                 Log.d("guoji", obj.getName());
@@ -126,7 +136,13 @@ public class HomePageFragment extends Fragment{
                 if (result && list.get(position).getName().equals(AviationCommons.APP_GNJ_CargoHanding)) {
                     Intent CargoHanding = new Intent(getActivity(), CargoHandingActivity.class);
                     startActivity(CargoHanding);
-                }  else {
+                }  else if (result && list.get(position).getName().equals(AviationCommons.APP_GNJ_ImpPickUp)) {
+                    Intent ImpPickUp = new Intent(getActivity(),ImpPickUpActivity.class);
+                    startActivity(ImpPickUp);
+                }else if (result && list.get(position).getName().equals(AviationCommons.APP_GJJ_Move)) {
+                    Intent moveIntent = new Intent(getActivity(),GjjMoveActivity.class);
+                    startActivity(moveIntent);
+                }else {
                     Toast.makeText(getActivity(), "功能尚未开发", Toast.LENGTH_LONG).show();
                 }
             }

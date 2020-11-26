@@ -76,6 +76,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('libs/commons-lang3-3.7.jar')
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.jakewharton:butterknife:8.8.0'
@@ -88,6 +89,7 @@ dependencies {
     compile 'javax.annotation:javax.annotation-api:1.2'
     compile 'org.projectlombok:lombok:1.16.6'
     compile 'com.google.zxing:core:3.3.3'
+    compile 'com.rmtheis:tess-two:9.0.0'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
 }

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/GjjMove_main">
+
+    <include layout="@layout/navbar"
+        android:id="@+id/GjjMoveBar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="0dp"
+            android:background="#ffffff">
+
+            <njkgkj.com.aircargoplusapp.view.AutofitTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:text="运单类型:"
+                android:textColor="#666666"
+                android:textSize="@dimen/house_size"
+                android:maxLines="1"
+                app:sizeToFit="true"/>
+
+            <njkgkj.com.aircargoplusapp.view.AutofitTextView
+                android:id="@+id/GjjMove_txt_YunDanLeiXin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:layout_marginLeft="0dp"
+                android:layout_gravity="center"
+                android:text=""
+                android:textColor="#666666"
+                android:textSize="@dimen/house_size"
+                android:maxLines="1"
+                android:background="@drawable/spinner_bg"
+                app:sizeToFit="true"/>
+
+            <njkgkj.com.aircargoplusapp.view.AutofitTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_marginLeft="12dp"
+                android:layout_gravity="center"
+                android:text="承运人:"
+                android:textColor="#666666"
+                android:textSize="@dimen/house_size"
+                android:maxLines="1"
+                app:sizeToFit="true"/>
+
+            <EditText
+                android:id="@+id/GjjMove_EdTxt_AgentCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.25"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:gravity="left"
+                android:hint=""
+                android:imeOptions="actionDone"
+                android:inputType="textVisiblePassword"
+                android:maxLength="6"
+                android:paddingLeft="5dp"
+                android:background="@drawable/edit_bg"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:background="#ffffff">
+
+        <njkgkj.com.aircargoplusapp.view.AutofitTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:text="运单号:"
+            android:textColor="#666666"
+            android:textSize="@dimen/house_size"
+            android:maxLines="1"
+            app:sizeToFit="true"/>
+
+        <EditText
+            android:id="@+id/GjjMove_EdTxt_YunDanHao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="0dp"
+            android:layout_weight="0.45"
+            android:digits="0123456789"
+            android:gravity="left"
+            android:hint=""
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edit_bg"/>
+
+        <Button
+            android:id="@+id/GjjMove_Btn_chaxun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_selector"
+            android:text="查询"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/GjjMove_Btn_shencheng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="0.2"
+            android:background="@drawable/button_selector"
+            android:text="生成"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="134dp"
+        android:background="#F2F2F2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运单号"
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="特码"
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="代理"
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="航班"
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="174dp">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/GjjMove_pulltorefreeshviw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/GjjMove_in_home_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null">
+
+            </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+
+
+
+
+</com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>

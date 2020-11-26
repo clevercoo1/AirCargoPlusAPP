@@ -1,5 +1,9 @@
 package njkgkj.com.aircargoplusapp.Utils;
 
+import android.os.Environment;
+
+import lombok.val;
+
 /**
  * 主要存全局常用值
  */
@@ -23,12 +27,16 @@ public class AviationCommons {
             "PH:普货"};
 
     public static String TAG = "ACTAG";
+    public static final String DST_FOLDER_NAME = "AirCargoPlusApp";
+    public static final String StoragePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/" + DST_FOLDER_NAME;
+    public static final int Camera_Quality = 30;
 
     public static String Comany_txt = "南京禄口国际机场定制版";
     /**
      * 登录得到服务器成功返回的ID（每次注销得到的ID值不一样）
      */
     public static String LoginFlag = "";
+    public static float MyDPI = 0;
 
     //解析时 错误信息的TAG
     public static final String Log_TAG = "ErrorText";
@@ -73,52 +81,27 @@ public class AviationCommons {
 
     // HomePageFragment内容
     public static final String APP_GNJ_CargoHanding = "appGnjCargoHanding";
-    public static final String APP_DOM_EXP_PREPARE_AWB = "appDomExpPrepareAWB";
-    public static final String APP_DOM_EXP_WARE_HOUSE = "appDomExpWareHouse";
-    public static final String APP_INT_EXP_AWB_MANAGE = "appIntExpAWBManage";
-    public static final String APP_INT_EXP_PREPARE_AWB = "appIntExpPrepareAWB";
-    public static final String APP_INT_EXPONEKEY_DECLARE = "appIntExpOneKeyDeclare";
-    public static final String APP_INT_EXPONEKEY_DECLARE_INFO = "appIntExpDeclareInfo";
-    public static final String APP_INT_IMP_CARGO_INFO = "appIntImpCargoInfo";
-    public static final String APP_FLIGHT_MESSAGE = "appFlightMessage";
-    public static final String APP_EDECLARE_INFO = "appExportDeclareInfoForCarrier";
-
-    // 国际承运人
-    public static final String APP_IntExportDayReportOfCarrier = "appIntExportDayReportOfCarrier";
-    public static final String APP_IntExportReportOfCarrier = "appIntExportReportOfCarrier";
-    public static final String APP_IntImportDayReportOfCarrier = "appIntImportDayReportOfCarrier";
-    public static final String APP_IntImportReportOfCarrier = "appIntImportReportOfCarrier";
-
-    // 国内承运人
-    public static final String APP_DomExport0FlightPlanChecked = "appDomExport0FlightPlanChecked";
-    public static final String APP_DomExportDayReportOfCarrier = "appDomExportDayReportOfCarrier";
-    public static final String APP_DomExportReportOfCarrier = "appDomExportReportOfCarrier";
-    public static final String APP_DomImportDayReportOfCarrier = "appDomImportDayReportOfCarrier";
-    public static final String APP_DomImportReportOfCarrier = "appDomImportReportOfCarrier";
+    public static final String APP_GNJ_ImpPickUp = "appGnjImpPickUp";
+    public static final String APP_GJJ_Move = "appGjjMove";
 
     //国内进港
     //进港理货
     public static final String gnj_CargoHandingActivity_model = "CargoHandingApp";
+    //
+    public static final String gnj_PickUP_model = "ImpPickUP";
 
-    //货运 国内出港
-    //国内出港收运
-    public static final String APP_CGO_Dom_Exp_CheckIn = "appCGODomExpCheckIn";
-    //国内出港复磅
-    public static final String APP_CGO_Dom_Exp_ReWeight = "appCGODomExpReWeight";
-    //国内出港理货
-    public static final String APP_CGO_Dom_Exp_ULDLoading = "appCGODomExpULDLoading";
-    //国内出港装机单
-    public static final String APP_CGO_Dom_Exp_MftLoading = "appCGODomExpMftLoading";
-    //国内出港航班进程管控
-    public static final String APP_CGO_Dom_Exp_FlightCtrl = "appCGODomExpFlightCtrl";
+    public static final String gnj_PickUpSignature_model = "PickUpSignature";
+
+    public static final String gjj_Move_model = "GjjMove";
+    public static final String gjj_Move_modelList = "GjjMoveList";
+
     // handler传递的值（int型）
     public static final int GNJ_CargoHandingActivity = 0x11;
     public static final int GNJ_CargoHandingInfoActivity = 0x22;
-
-    // intent传值需要返回
-    public static final int AWB_ADD = 3;
-    public static final int AWB_UPDATA = 2;
-    public static final int CHANGE_PASS = 114;
+    public static final int GNJ_ImpPickUpActivity = 0x33;
+    public static final int GNJ_PickUpSignatureActivity = 0x44;
+    public static final int GNJ_PickUpSignatureActivity_update = 0x50;
+    public static final int GJJ_GjjMoveActivity_Load = 0x51;
 
     //权限申请
     public static final int REQUEST_CODE_CAMERA_PERMISSIONS  = 0x100;
@@ -126,16 +109,36 @@ public class AviationCommons {
     public static final int REQUEST_CODE_READ_PERMISSIONS  = 0x300;
 
     //回调参数
-    public static final int CargoHandingActivity_CAMERA_REQUEST = 1;
-    public static final int CargoHandingInfoActivity_REQUEST = 2;
-
-
+    public static final int CargoHandingActivity_CAMERA_REQUEST = 10;
     public static final int CargoHandingActivity_CAMERA_RESULT = 11;
-    public static final int CargoHandingInfoActivity_RESULT = 22;
+
+    public static final int CargoHandingInfoActivity_REQUEST = 12;
+    public static final int CargoHandingInfoActivity_RESULT = 13;
+
+    public static final int ImpPickUp_CAMERA_REQUEST = 14;
+    public static final int ImpPickUp_CAMERA_RESULT = 15;
+
+    public static final int PickUpSignatureActivity_REQUEST = 16;
+    public static final int PickUpSignatureActivity_RESULT = 17;
+
+    public static final int GjjMoveActivity_CAMERA_REQUEST = 18;
+    public static final int GjjMoveActivity_CAMERA_RESULT = 19;
+
+
+
+
+
+
 
 
     //上拉加载更多
     public static final int LOAD_DATA = 2;
     //下拉刷新
     public static final int REFRESH_DATA = 1;
+
+    //tesstwo
+    public static final String FILE_NAME = "tessdata";
+    public static final String LANGUAGE_NAME = "eng.traineddata";
+    public static final String LANGUAGE_FILE_NAME = "eng";
+    public static final int PERMISSION_REQUEST_CODE = 0;
 }

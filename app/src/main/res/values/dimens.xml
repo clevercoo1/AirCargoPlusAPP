@@ -13,7 +13,7 @@
 
     <dimen name="house_small_size">12sp</dimen>
 
-    <dimen name="house_size">18sp</dimen>
+    <dimen name="house_size">16sp</dimen>
 
     <!--单子字体详情公共颜色-->
     <dimen name="declare_size">15sp</dimen>
