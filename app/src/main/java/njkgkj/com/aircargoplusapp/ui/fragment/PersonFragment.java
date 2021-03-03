@@ -24,16 +24,6 @@ import njkgkj.com.aircargoplusapp.R;
 import njkgkj.com.aircargoplusapp.ui.base.NavBar;
 import njkgkj.com.aircargoplusapp.Utils.PreferenceUtils;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-
 /**
  * 我的fragment(这里主要包括用户的一些设置)
  */

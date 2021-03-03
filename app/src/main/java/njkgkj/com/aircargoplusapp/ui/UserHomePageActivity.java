@@ -42,13 +42,6 @@ import njkgkj.com.aircargoplusapp.ui.fragment.PersonFragment;
 import njkgkj.com.aircargoplusapp.Utils.AviationCommons;
 import njkgkj.com.aircargoplusapp.Utils.PreferenceUtils;
 
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;

@@ -85,11 +85,14 @@ public class GjjMoveQRcodeActivity extends Activity {
     private void initView() {
         navBar = new NavBar(this);
         navBar.setTitle("待移库信息");
-        QRstring = "";
 
         HashMap<String,String[]> p = (HashMap<String, String[]>) getIntent().getSerializableExtra("Info");
+        String flag = getIntent().getSerializableExtra("MoveType").toString();
+
+        QRstring = flag;
+
         for (String key : p.keySet()){
-            QRstring += key + "_";
+            QRstring += "_" + key ;
         }
 
         if (!TextUtils.isEmpty(QRstring)) {

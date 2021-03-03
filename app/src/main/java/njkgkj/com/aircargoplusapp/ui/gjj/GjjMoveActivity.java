@@ -253,6 +253,15 @@ public class GjjMoveActivity extends Activity {
                     Intent intent = new Intent(mContext, GjjMoveQRcodeActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("Info", MoveStore);
+                    if (txt_YunDanLeiXin.getText().toString().toString().trim().equals("转国内出港")) {
+                        bundle.putSerializable("MoveType", AviationCommons.Gjj_To_Gnc);
+                    } else if (txt_YunDanLeiXin.getText().toString().toString().trim().equals("转国际出港")) {
+                        bundle.putSerializable("MoveType", AviationCommons.Gjj_To_Gjc);
+                    } else {
+                        ToastUtils.showToast(mContext,"移库类型解析错误!", Toast.LENGTH_SHORT);
+                        return;
+                    }
+
                     intent.putExtras(bundle);
                     startActivity(intent);
                 } else {
@@ -390,8 +399,8 @@ public class GjjMoveActivity extends Activity {
                             }
                         }
 
-                        if (mList.size() == strings.length) {
-                            CargoToMove(mList);
+                        if (mList.size() == strings.length - 1) {
+                            CargoToMove(mList,strings[0]);
                         } else {
                             ToastUtils.showToast(mContext, "运单号解析错误！", Toast.LENGTH_SHORT);
                         }
@@ -407,9 +416,19 @@ public class GjjMoveActivity extends Activity {
     //endregion
 
     //region 移库上传
-    private void CargoToMove(List<GjjMoveModel> mList) {
+    private void CargoToMove(List<GjjMoveModel> mList,String MoveType) {
+        String method = "";
+
+        if (MoveType.equals(AviationCommons.Gnj_To_Gjj)) {
+            method = HttpCommons.gnj_Move_toMove;
+        } else {
+            ToastUtils.showToast(mContext,"非移库到国际进港的货物!", Toast.LENGTH_SHORT);
+            return;
+        }
+
+        UploadData mData = UploadDataUtils.getUploadData(mList, AviationCommons.gjj_Move_modelList, method);
+
         Ldialog.show();
-        UploadData mData = UploadDataUtils.getUploadData(mList, AviationCommons.gjj_Move_modelList, HttpCommons.gjj_Move_toMove);
         HttpRoot.getInstance().requstAync(mContext, mData,
                 new HttpRoot.CallBack() {
                     @Override
@@ -466,6 +485,13 @@ public class GjjMoveActivity extends Activity {
         @Override
         public GjjMoveModel getItem(int position) {
             return GjjMoveInfoList.get(position);
+        }
+
+        public void remove(int pos) {
+            if (GjjMoveInfoList != null && GjjMoveInfoList.size() > 0) {
+                GjjMoveInfoList.remove(pos);
+                notifyDataSetChanged();
+            }
         }
 
         @Override

@@ -3,6 +3,8 @@ package njkgkj.com.aircargoplusapp.ui.gnj;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
@@ -10,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +34,15 @@ import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import njkgkj.com.aircargoplusapp.R;
 import njkgkj.com.aircargoplusapp.Utils.AviationCommons;
 import njkgkj.com.aircargoplusapp.Utils.FastjsonUtils;
+import njkgkj.com.aircargoplusapp.Utils.FileChooseUtil;
+import njkgkj.com.aircargoplusapp.Utils.OfficelUtils;
 import njkgkj.com.aircargoplusapp.Utils.PublicFun;
 import njkgkj.com.aircargoplusapp.Utils.ToastUtils;
 import njkgkj.com.aircargoplusapp.Utils.UploadDataUtils;
@@ -49,6 +55,7 @@ import njkgkj.com.aircargoplusapp.ui.base.CaptureActivity;
 import njkgkj.com.aircargoplusapp.ui.base.NavBar;
 import njkgkj.com.aircargoplusapp.ui.dialog.LoadingDialog;
 
+import static android.R.attr.path;
 import static android.R.style.Widget;
 import static com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView.newSection;
 import static njkgkj.com.aircargoplusapp.Utils.AviationCommons.CargoHandingActivity_CAMERA_REQUEST;
@@ -122,6 +129,7 @@ public class CargoHandingActivity extends Activity {
     private void initView() {
         navBar = new NavBar(this);
         navBar.setTitle("国内进港理货");
+        navBar.setRight(R.drawable.ic_menu_two);
 
         Ldialog = new LoadingDialog(mContext);
         cargoHandingApps = new ArrayList<>();
@@ -191,6 +199,23 @@ public class CargoHandingActivity extends Activity {
                 }
 
                 break;
+            case 1:
+                if (resultCode == Activity.RESULT_OK) {
+                    Uri uri = data.getData();
+                    String mPath = FileChooseUtil.getFilePathFromURI(mContext, uri);
+                    List<Map<String, String>> aaa = OfficelUtils.readExcel(mPath , new String[]{"编号","你好"});
+                    String result = "开始";
+                    if (aaa != null && aaa.size() > 0) {
+                        for (String key:aaa.get(0).keySet()){
+                            result += aaa.get(0).get(key);
+                        }
+
+
+                    }
+                    ToastUtils.showToast(mContext, result, Toast.LENGTH_SHORT);
+                }
+
+                break;
         }
     }
     //endregion
@@ -234,6 +259,22 @@ public class CargoHandingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 useCamera();
+            }
+        });
+
+        navBar.getRightImageView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("*/*");//无类型限制
+//        有类型限制是这样的:
+//        intent.setType(“image/*”);//选择图片
+//        intent.setType(“audio/*”); //选择音频
+//        intent.setType(“video/*”); //选择视频 （mp4 3gp 是android支持的视频格式）
+//        intent.setType(“video/*;image/*”);//同时选择视频和图片
+
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(intent, 1);
             }
         });
     }

@@ -13,12 +13,7 @@ import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
 import android.util.Log;
 import android.view.SurfaceHolder;
-import android.widget.Toast;
 
-import static android.R.attr.x;
-import static android.R.attr.y;
-import static njkgkj.com.aircargoplusapp.Utils.AviationCommons.MyDPI;
-import static org.apache.http.HttpHeaders.IF;
 
 /**
  * 摄像头控制管理类

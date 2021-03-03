@@ -65,6 +65,10 @@ public class AviationCommons {
     public static final String FLIGHT_DETAIL = "flightdetail";
     public static final String EDECLARE_INFO = "edeclareinfo";
 
+    public static final String Gnj_To_Gjj = "CIII";
+    public static final String  Gjj_To_Gnc = "IICO";
+    public static final String Gjj_To_Gjc = "IIIO";
+
     // Intent传值
     public static final String INT_GROUP_MAWB = "mawb";
     public static final String HIDE_INT_AWB_UPDATE = "hidehouse";

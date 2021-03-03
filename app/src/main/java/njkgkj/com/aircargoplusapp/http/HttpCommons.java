@@ -28,4 +28,6 @@ public class HttpCommons {
     //
     public static final String gjj_Move_toMove = "GjjMove.GjjWarehouseToMove";
 
+    public static final String gnj_Move_toMove = "move.GNJWarehouseToMove";
+
 }
